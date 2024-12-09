@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
 // Route::domain('blog.Subdominios.test')->group(function () {
@@ -32,7 +32,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::domain('{subdominio}.Subdominios.test')->middleware('trainer')->group(function () {
 
-    Route::get('/', function ($tenant) {
+    Route::get('/home', function ($tenant) {
         return "Hola bienvenido al: $tenant";
     });
 
