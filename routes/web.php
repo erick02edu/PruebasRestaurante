@@ -18,19 +18,7 @@ Route::get('/', function () {
 });
 
 
-// Route::domain('blog.Subdominios.test')->group(function () {
-//     Route::get('/', function () {
-//         return 'Bienvenido al subdominio';
-//     });
-// });
-
-// Route::get('/', function () {
-//     return "Bienvenido a " . request()->getHost();
-// });
-
-
-
-Route::domain('{subdominio}.Subdominios.test')->middleware('trainer')->group(function () {
+Route::domain("{subdominio}.subdominios.test")->middleware('trainer')->group(function () {
 
     Route::get('/home', function ($tenant) {
         return "Hola bienvenido al: $tenant";
